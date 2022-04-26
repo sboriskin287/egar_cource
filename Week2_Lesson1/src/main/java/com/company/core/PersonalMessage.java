@@ -11,7 +11,7 @@ public class PersonalMessage extends Message {
     }
 
     @Override
-    void print() {
+    public void print() {
         System.out.println("Это личное сообщение, " +
                 "не для чата"
                 + content);
