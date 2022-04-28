@@ -2,13 +2,14 @@ import core.hero.Hero;
 import core.item.Boots;
 import core.item.ChestPlate;
 import core.item.Helmet;
+import core.level.Level;
 import helper.HeroFactory;
-
-import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
         Hero archer = HeroFactory.createArcher();
+        archer.attack(archer);
+        archer.isDeath();
         if (Math.random() > 0.5)
             archer.getProtects().add(new Helmet());
         Hero warrior = HeroFactory.createWarrior();
@@ -27,5 +28,15 @@ public class Main {
         mage.attack(elf);
         elf.attack(dwarf);
         dwarf.attack(archer);
+
+        archer.attack(warrior);
+        archer.updateLevel(Level.L2);
+        warrior.attack(mage);
+        mage.attack(elf);
+        mage.updateLevel(Level.L2);
+        elf.attack(dwarf);
+        elf.updateLevel(Level.L3);
+        dwarf.attack(archer);
+        dwarf.updateLevel(Level.L4);
     }
 }
