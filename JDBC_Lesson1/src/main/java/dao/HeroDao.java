@@ -1,13 +1,11 @@
 package dao;
 
-import core.hero.Hero;
-
 import java.util.List;
 import java.util.Optional;
 
-public interface HeroDao<T extends Hero> {
+public interface HeroDao<T> {
 
-    List<? extends Hero> findAllHero();
+    List<T> findAllHero();
 
     Optional<T> findHeroById(Integer id);
 

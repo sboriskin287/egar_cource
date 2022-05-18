@@ -1,17 +1,19 @@
-import core.hero.Archer;
 import core.hero.Hero;
 import core.item.Boots;
 import core.item.ChestPlate;
 import core.item.Helmet;
 import core.level.Level;
 import dao.ArcherDao;
+import entity.ArcherEntity;
 import helper.HeroFactory;
+
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
         Hero archer = HeroFactory.createArcher();
-        archer.setName("Dimon");
-        new ArcherDao().saveHero((Archer) archer);
+        ArcherDao ad = ArcherDao.getInstance();
+        List<ArcherEntity> archers = ad.findAllHero();
         archer.attack(archer);
         archer.isDeath();
         if (Math.random() > 0.5)
