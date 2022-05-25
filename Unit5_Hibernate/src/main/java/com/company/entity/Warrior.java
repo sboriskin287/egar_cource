@@ -30,12 +30,12 @@ public class Warrior {
                     name = "sequence_name",
                     value = "warrior_id_seq")
     )*/
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
 
     @OneToOne(fetch = FetchType.LAZY,
-            cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+            cascade = { CascadeType.PERSIST, CascadeType.MERGE})
     @JoinColumn(name = "hero_id")
     private Hero hero;
 }
