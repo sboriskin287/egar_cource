@@ -1,14 +1,12 @@
 package com.company.entity;
 
-import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.annotations.Parameter;
 
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -18,6 +16,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import java.util.List;
 
@@ -30,7 +29,12 @@ import java.util.List;
 public class Hero {
     @Id
     @GeneratedValue(
-            strategy = GenerationType.IDENTITY)
+            strategy = GenerationType.SEQUENCE,
+            generator = "hero_seq")
+    @SequenceGenerator(
+            name = "hero_seq",
+            sequenceName = "hero_id_seq",
+            allocationSize = 1)
     @Column(name = "id")
     private Integer id;
 
@@ -52,4 +56,7 @@ public class Hero {
             joinColumns = @JoinColumn(name = "hero_id"),
             inverseJoinColumns = @JoinColumn(name = "task_id"))
     private List<Task> tasks;
+
+    @Embedded
+    private Audit audit = new Audit();
 }
