@@ -26,7 +26,7 @@ import java.util.List;
 @Getter
 @Setter
 @EqualsAndHashCode(of = "id")
-@ToString
+@ToString(exclude = {"tasks", "items"})
 public class Hero {
     @Id
     @GeneratedValue(

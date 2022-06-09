@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import java.math.BigDecimal;
 
 @Service
-@EnableScheduling
+//@EnableScheduling
 @RequiredArgsConstructor
 public class BankService {
 
