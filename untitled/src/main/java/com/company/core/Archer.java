@@ -1,4 +1,4 @@
-package com.company.core;
+package com.company.domain;
 
 public class Archer extends Hero {
 

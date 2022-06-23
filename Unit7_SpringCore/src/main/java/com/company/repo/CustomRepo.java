@@ -1,6 +1,6 @@
 package com.company.repo;
 
-import com.company.core.entity.Hero;
+import com.company.domain.entity.Hero;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.NoRepositoryBean;
 

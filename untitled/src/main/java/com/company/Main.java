@@ -1,8 +1,8 @@
 package com.company;
 
-import com.company.core.Account;
-import com.company.core.Bank;
-import com.company.core.Hero;
+import com.company.domain.Account;
+import com.company.domain.Bank;
+import com.company.domain.Hero;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 

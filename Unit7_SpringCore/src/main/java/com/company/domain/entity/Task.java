@@ -1,4 +1,4 @@
-package com.company.core.entity;
+package com.company.domain.entity;
 
 import lombok.Data;
 import lombok.ToString;

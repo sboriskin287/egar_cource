@@ -1,6 +1,6 @@
 package com.company.config;
 
-import com.company.core.Account;
+import com.company.domain.Account;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

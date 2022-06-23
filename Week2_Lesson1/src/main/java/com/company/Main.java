@@ -1,8 +1,8 @@
 package com.company;
 
-import com.company.core.GroupMessage;
-import com.company.core.Message;
-import com.company.core.PersonalMessage;
+import com.company.domain.GroupMessage;
+import com.company.domain.Message;
+import com.company.domain.PersonalMessage;
 
 import java.util.Date;
 

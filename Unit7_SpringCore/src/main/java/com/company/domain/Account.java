@@ -1,7 +1,6 @@
-package com.company.core;
+package com.company.domain;
 
 import lombok.Data;
-import org.springframework.beans.factory.InitializingBean;
 
 import javax.annotation.PostConstruct;
 import java.math.BigDecimal;

@@ -31,7 +31,8 @@ public class JpaConfig {
         LocalContainerEntityManagerFactoryBean emf =
             new LocalContainerEntityManagerFactoryBean();
         emf.setDataSource(dataSource());
-        HibernateJpaVendorAdapter vendor = new HibernateJpaVendorAdapter();
+        HibernateJpaVendorAdapter vendor =
+                new HibernateJpaVendorAdapter();
         vendor.setShowSql(true);
         emf.setJpaVendorAdapter(vendor);
         emf.setPackagesToScan("com.company");

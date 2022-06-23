@@ -1,4 +1,4 @@
-package com.company.core;
+package com.company.domain;
 
 import lombok.Getter;
 import org.springframework.beans.factory.annotation.Qualifier;

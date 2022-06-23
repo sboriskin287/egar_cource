@@ -1,8 +1,8 @@
 package com.company.config;
 
-import com.company.core.Account;
-import com.company.core.Archer;
-import com.company.core.Hero;
+import com.company.domain.Account;
+import com.company.domain.Archer;
+import com.company.domain.Hero;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;

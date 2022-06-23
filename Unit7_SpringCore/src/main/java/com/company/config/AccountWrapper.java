@@ -1,6 +1,6 @@
 package com.company.config;
 
-import com.company.core.Account;
+import com.company.domain.Account;
 
 import java.util.function.Supplier;
 

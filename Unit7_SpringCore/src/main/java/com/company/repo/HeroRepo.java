@@ -1,10 +1,7 @@
 package com.company.repo;
 
-import com.company.core.entity.Hero;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
+import com.company.domain.entity.Hero;
 
-import java.util.List;
 import java.util.Optional;
 
 public interface HeroRepo extends CustomRepo<Hero, Integer> {

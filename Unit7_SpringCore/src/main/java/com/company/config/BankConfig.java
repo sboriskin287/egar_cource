@@ -1,6 +1,6 @@
 package com.company.config;
 
-import com.company.core.Bank;
+import com.company.domain.Bank;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

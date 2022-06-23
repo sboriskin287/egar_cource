@@ -1,6 +1,6 @@
-package com.company.core;
+package com.company.domain;
 
-import com.company.core.entity.Hero;
+import com.company.domain.entity.Hero;
 import lombok.Getter;
 
 import java.util.Collection;
