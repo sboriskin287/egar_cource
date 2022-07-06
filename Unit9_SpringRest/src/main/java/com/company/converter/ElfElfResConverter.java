@@ -7,13 +7,16 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 @RequiredArgsConstructor
 @Component
-public class ElfElfResConverter implements Converter<Elf, ElfRes> {
+public class ElfElfResConverter implements Converter<String, LocalDate> {
     private final ElfMapper elfMapper;
 
     @Override
-    public ElfRes convert(Elf source) {
-        return elfMapper.toElfRes(source);
+    public LocalDate convert(String source) {
+        return LocalDate.parse(source, DateTimeFormatter.ISO_DATE_TIME);
     }
 }
