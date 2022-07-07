@@ -24,9 +24,4 @@ public class RandomBeanPostProcessor implements BeanPostProcessor {
         }
         return bean;
     }
-
-    @Override
-    public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
-        return BeanPostProcessor.super.postProcessAfterInitialization(bean, beanName);
-    }
 }

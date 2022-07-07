@@ -1,0 +1,4 @@
+bean:
+  actual:
+    message: 'Its actual message'
+    number: 9

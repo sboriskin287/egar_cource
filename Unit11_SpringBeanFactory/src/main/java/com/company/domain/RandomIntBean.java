@@ -2,7 +2,6 @@ package com.company.domain;
 
 import lombok.Data;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.annotation.PostConstruct;
 
