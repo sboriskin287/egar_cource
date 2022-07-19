@@ -9,6 +9,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -18,14 +19,14 @@ public class LoginController {
     private final JwtTokenUtil jwtTokenUtil;
 
     @PostMapping("/login")
-    public ResponseEntity<TokenDto> login(LoginDto ld) {
+    public ResponseEntity<TokenDto> login(@RequestBody LoginDto ld) {
         try {
             Authentication auth = authManager.authenticate(
                     new UsernamePasswordAuthenticationToken(
                             ld.getUsername(),
                             ld.getPassword()));
             TokenDto td = new TokenDto();
-            td.setAccessToken(jwtTokenUtil.generateToken((User)auth.getPrincipal()));
+            td.setAccessToken(jwtTokenUtil.generateToken(((UserDetailsImpl)auth.getPrincipal()).getUser()));
             return ResponseEntity
                     .status(HttpStatus.OK)
                     .body(td);

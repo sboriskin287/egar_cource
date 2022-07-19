@@ -16,16 +16,17 @@ public class JwtTokenUtil {
     public String generateToken(User user) {
         Date now = new Date();
         long expTime = now.getTime() + 600000;
-        return Jwts
+        return "Bearer " + Jwts
                 .builder()
+                .setExpiration(new Date(expTime))
+                .setId(String.valueOf(user.getUsername()))
                 .setClaims(Map.of(
                         "id", user.getId(),
                         "name", user.getName(),
+                        "username", user.getUsername(),
                         "role", user.getRole()))
-                .setExpiration(new Date(expTime))
-                .setId(String.valueOf(user.getUsername()))
                 .signWith(SignatureAlgorithm.HS512, SECRET)
-                .toString();
+                .compact();
     }
 
     public boolean validateToken(String token) {
@@ -45,8 +46,9 @@ public class JwtTokenUtil {
         String t = token.substring(7);
         return Jwts
                 .parser()
-                .parseClaimsJws(token)
+                .setSigningKey(SECRET)
+                .parseClaimsJws(t)
                 .getBody()
-                .getId();
+                .get("username", String.class);
     }
 }

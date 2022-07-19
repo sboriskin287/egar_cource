@@ -3,6 +3,7 @@ package com.egar.security;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -12,7 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "user")
+@Table(name = "rpg_user")
 @Data
 public class User {
     @Id
@@ -34,7 +35,7 @@ public class User {
 
         @Override
         public String getAuthority() {
-            return name();
+            return "ROLE_" + name();
         }
     }
 }
